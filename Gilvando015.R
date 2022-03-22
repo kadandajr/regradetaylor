@@ -1,7 +1,7 @@
-##Universidade Federal da Paraíba
-##CCSA - Ciências Econômicas
-##Introdução à Econometria
-##Gilvando Gomes de Lima Júnior
+##Universidade Federal da Paraï¿½ba
+##CCSA - Ciï¿½ncias Econï¿½micas
+##Introduï¿½ï¿½o ï¿½ Econometria
+##Gilvando Gomes de Lima Jï¿½nior
 
 ##Bibliotecas Usadas
 
@@ -16,7 +16,7 @@ install.packages("het.test")
 
 ##Set Arquivos
 
-Dados<-read.table("GILVANDO015.txt", header = T )
+dados<-read.table("GILVANDO015.txt", header = T );
 
 
 ##Transformar TS
@@ -50,13 +50,13 @@ PIBDFDECM <- decompose(PIBDF, type = "multiplicative")
 
 d<-list(IPCA,SELIC,PIBDF,EXPC,META,TXREAL,HIATOC,DESV)
 
-##Títulos e Eixos
+##Tï¿½tulos e Eixos
 
 eixo <- c('%','%','Pib Real Acumulado','%','%','%','Hiato','%')
-grafico <- c('Gráfico 1: IPCA Acumulado, 2002-2017','Gráfico 2: Selic Acumulada, 2002-2017','Gráfico 3: Pib Real, 2002-2017 em Milhões de R$','Gráfico 4: Expectativa Inflação, 2002-2017','Gráfico 5: Meta Inflação, 2002-2017','Gráfico 06: Taxa de Juros Real','Gráfico 07: Hiato do Produto','Gráfico 08: Desvio Inflação')
-titulo <- c('Histograma do IPCA acumulado 12 meses','Histograma da Selic Acumulada 12 meses','Histograma do Pib Real','Histograma da Expectativa Inflação','Histograma da Meta de Inflação','Histograma da Taxa Real de Juros','Histograma do Hiato do Produto','Histograma do Desvio da Inflação')
-med.ted <- c('ÍNDICE DE PREÇOS AO CONSUMIDOR AMPLO','TAXA DE JUROS SELIC','PRODUTO INTERNO BRUTO REAL','EXPECTATIVA DE INFLAÇÃO','META DE INFLAÇÃO','TAXA REAL DE JUROS','HIATO DO PRODUTO','DESVIO DA INFLAÇÃO')
-titulos <- c('Média','Mediana','Mínimo','Máximo','Desvio Padrão','Coeficiente de Variação')
+grafico <- c('Grï¿½fico 1: IPCA Acumulado, 2002-2017','Grï¿½fico 2: Selic Acumulada, 2002-2017','Grï¿½fico 3: Pib Real, 2002-2017 em Milhï¿½es de R$','Grï¿½fico 4: Expectativa Inflaï¿½ï¿½o, 2002-2017','Grï¿½fico 5: Meta Inflaï¿½ï¿½o, 2002-2017','Grï¿½fico 06: Taxa de Juros Real','Grï¿½fico 07: Hiato do Produto','Grï¿½fico 08: Desvio Inflaï¿½ï¿½o')
+titulo <- c('Histograma do IPCA acumulado 12 meses','Histograma da Selic Acumulada 12 meses','Histograma do Pib Real','Histograma da Expectativa Inflaï¿½ï¿½o','Histograma da Meta de Inflaï¿½ï¿½o','Histograma da Taxa Real de Juros','Histograma do Hiato do Produto','Histograma do Desvio da Inflaï¿½ï¿½o')
+med.ted <- c('ï¿½NDICE DE PREï¿½OS AO CONSUMIDOR AMPLO','TAXA DE JUROS SELIC','PRODUTO INTERNO BRUTO REAL','EXPECTATIVA DE INFLAï¿½ï¿½O','META DE INFLAï¿½ï¿½O','TAXA REAL DE JUROS','HIATO DO PRODUTO','DESVIO DA INFLAï¿½ï¿½O')
+titulos <- c('Mï¿½dia','Mediana','Mï¿½nimo','Mï¿½ximo','Desvio Padrï¿½o','Coeficiente de Variaï¿½ï¿½o')
 Curtose <- c('Curtose')
 Assimetria <- c('Assimetria')
 Jar.Bera <- c('Jarque Bera Teste')
@@ -64,7 +64,7 @@ Tx.Lin <- c('Taxa de Crescimento Linear')
 Tx.Com <- c('Taxa Crescimento Composta')
 n <- 192
 
-##Código
+##Cï¿½digo
 
 cont <- 1;
 for (x in d ){
@@ -73,7 +73,7 @@ for (x in d ){
    (grid(col="grey", lwd="1"))
    (abline(h=mean(x), col="red"))  
    (options(scipen = 999))
-   (hist(x, breaks="sturges", col="darkgreen", main= titulo[c(cont)], ylab="Frequência", labels = T))
+   (hist(x, breaks="sturges", col="darkgreen", main= titulo[c(cont)], ylab="Frequï¿½ncia", labels = T))
    print(med.ted[c(cont)])
    print (titulos[1])
    print (mean(x))
@@ -103,32 +103,32 @@ for (x in d ){
    cont <- cont+1;
 }
 
-##Gráficos
+##Grï¿½ficos
 
 Grafico09<-cbind(PIBDF,SELIC,IPCA)
 par(mfrow=c(3,1))
-plot(Grafico09, main="Gráfico 11: PIB REAL, SELIC, IPCA", col="darkgreen")
+plot(Grafico09, main="Grï¿½fico 11: PIB REAL, SELIC, IPCA", col="darkgreen")
 Grafico10<-cbind(IPCA,EXPC,META)
 par(mfrow=c(3,1))
-plot(Grafico10, main="Gráfico 12: IPCA, EXPC, META", col="darkgreen") 
+plot(Grafico10, main="Grï¿½fico 12: IPCA, EXPC, META", col="darkgreen") 
 Grafico11<-cbind(TXREAL,SELIC,IPCA)
 par(mfrow=c(3,1))
-plot(Grafico11, main="Gráfico 12: TX REAL, SELIC, IPCA", col="darkgreen")
+plot(Grafico11, main="Grï¿½fico 12: TX REAL, SELIC, IPCA", col="darkgreen")
 
 par(mfrow=c(1,1))
-plot(PIBDF, type="l", col="blue", main="Gráfico 12: Pib Real e Pib Potencial Real")
+plot(PIBDF, type="l", col="blue", main="Grï¿½fico 12: Pib Real e Pib Potencial Real")
 lines(HIATOT, col="orange")
 lines(HIATOT, col="orange")
 legend("topleft", cbind(legend="Pib Real","Pib Potencial Real"),lty=2, col=c("orange","blue"),bty="n",lwd=1)
 grid(col="grey", lwd="1")
 
 par(mfrow=c(1,1))
-plot(HIATOC, col="darkgreen", type="l", main="Gráfico 13: Ciclo")
+plot(HIATOC, col="darkgreen", type="l", main="Grï¿½fico 13: Ciclo")
 grid(col="grey", lwd="1")
 
 par(mfrow=c(1,1))
 seasonplot(PIBDF)
-plot(PIB, type="l", col="darkgreen", main="Gráfico: Pib Real e Pib Nominal")
+plot(PIB, type="l", col="darkgreen", main="Grï¿½fico: Pib Real e Pib Nominal")
 lines(PIBDF, col="orange")
 legend("topleft", cbind(legend="Pib Real","Pib Nominal"),lty=2, col=c("orange","darkgreen"),bty="n",lwd=1)
 grid(col="grey", lwd="1")
@@ -138,7 +138,7 @@ plot(HIATOC)
 plot(PIBDFDECA)
 plot(PIBDFDECM)
 
-##Coeficiente de Correlação
+##Coeficiente de Correlaï¿½ï¿½o
 
 library("agricolae", "stats")
 correlationTest(TXREAL,SELIC)
@@ -164,7 +164,7 @@ correlationTest(EXPC,META)
 correlationTest(EXPC,TXREAL)
 correlationTest(META,TXREAL)
 
-##Regressão com o Hiato PIB Real Filtro HP
+##Regressï¿½o com o Hiato PIB Real Filtro HP
 
 REGRESSDF<-lm(SELIC~TXREAL + DESV + HIATOC)
 REGRESSDF
@@ -174,7 +174,7 @@ REGRESSDF$coefficients[3]
 REGRESSDF$coefficients[4]
 summary(REGRESSDF)
 
-##Estimando Selic Estimada e Resíduo
+##Estimando Selic Estimada e Resï¿½duo
 
 SELICESTIMADA<-((REGRESSDF$coefficients[1]) + (REGRESSDF$coefficients[2] * TXREAL) + (REGRESSDF$coefficients[3] * DESV) + (REGRESSDF$coefficients[4] * HIATOC))
 RESIDUO<-(SELIC-SELICESTIMADA);RESIDUO
@@ -184,18 +184,18 @@ jarqueberaTest(RESIDUO)
 summary(SELICESTIMADA)
 
 par(mfrow=c(1,1))
-plot(SELICESTIMADA, main = "Gráfico 9: Selic e Selic Estimada", type="l", col="darkgreen", xlab="Ano", ylab="")
+plot(SELICESTIMADA, main = "Grï¿½fico 9: Selic e Selic Estimada", type="l", col="darkgreen", xlab="Ano", ylab="")
 grid(col="grey", lwd="1")
 options(scipen = 999)
 legend("topright", cbind(legend="Selic","Selic Estimada"),lty=2, col=c("orange","darkgreen"),bty="n",lwd=1)
 lines(SELIC, col="orange")
 
 par(mfrow=c(1,2))
-plot(RESIDUO, main = "Gráfico 10: Resíduo da Regressão", type="l", col="darkgreen", xlab="Ano", ylab="")
+plot(RESIDUO, main = "Grï¿½fico 10: Resï¿½duo da Regressï¿½o", type="l", col="darkgreen", xlab="Ano", ylab="")
 grid(col="grey", lwd="1")
 abline(h=mean(RESIDUO), col="red")
 options(scipen = 999)
-hist(RESIDUO, breaks="sturges", col="darkgreen", main= "Histograma do Resíduo da Regressão", ylab="Frequência", labels = T)
+hist(RESIDUO, breaks="sturges", col="darkgreen", main= "Histograma do Resï¿½duo da Regressï¿½o", ylab="Frequï¿½ncia", labels = T)
 
 ## TESTE PARK
 
@@ -256,7 +256,7 @@ white<-lm(residuow ~ desviow + hiatow + txrealw + w1 + w2 + w3)
 summary(white)
 whitedistri<-192 * 0.317;whitedistri
 
-##AutoCorrelação
+##AutoCorrelaï¿½ï¿½o
 
 ##Teste de Durbin
 dwtest(REGRESSDF)
@@ -332,7 +332,7 @@ bptest(REGRESSLOG)
 library(lmtest)
 gqtest(REGRESSLOG)
 
-##AUTOCORRELAÇÃO LOG
+##AUTOCORRELAï¿½ï¿½O LOG
 
 dwtest(REGRESSLOG)
 
@@ -344,7 +344,7 @@ bgtest(REGRESSLOG, order=12)
 library(FinTS)
 ArchTest(RESIDUOLOG)
 
-##CORRIGINDO AUTOCORELAÇÃO
+##CORRIGINDO AUTOCORELAï¿½ï¿½O
 
 library(dynlm)
 REGRESSDYN<-dynlm(logselic ~ lag(logselic, -2) + lag(logselic, -1) + logtxreal + logdesv + loghiato)
@@ -352,11 +352,11 @@ summary(REGRESSDYN)
 RESIDUODYN<-residuals(REGRESSDYN)
 
 par(mfrow=c(1,2))
-plot(RESIDUODYN, main = "Gráfico 13: Resíduo da Regressão Corretiva", type="l", col="darkgreen", xlab="Ano", ylab="")
+plot(RESIDUODYN, main = "Grï¿½fico 13: Resï¿½duo da Regressï¿½o Corretiva", type="l", col="darkgreen", xlab="Ano", ylab="")
 grid(col="grey", lwd="1")
 abline(h=mean(RESIDUODYN), col="red")
 options(scipen = 999)
-hist(RESIDUODYN, breaks="sturges", col="darkgreen", main= "Histograma do Resíduo da Regressão Corretiva", ylab="Frequência", labels = T)
+hist(RESIDUODYN, breaks="sturges", col="darkgreen", main= "Histograma do Resï¿½duo da Regressï¿½o Corretiva", ylab="Frequï¿½ncia", labels = T)
 
 
 library(lmtest)
@@ -447,7 +447,7 @@ hiadilma1<-(window(HIATOC, frequency=12, start=c(2011,1), end=c(2014,12)));hiadi
 hiadilma2<-(window(HIATOC, frequency=12, start=c(2015,1), end=c(2016,8)));hiadilma2
 hiatemer<-(window(HIATOC, frequency=12, start=c(2016,9), end=c(2017,12)));hiatemer 
 
-## REGRESSÃO FHC
+## REGRESSï¿½O FHC
 
 rfhc<-lm(selfhc ~ jrfhc + desvfhc + hiafhc)
 summary(rfhc)
@@ -480,27 +480,27 @@ dwtest(rdfhc)
 library(FinTS)
 ArchTest(resdfhc)
 
-## REGRESSÃO LULA1
+## REGRESSï¿½O LULA1
 
 rlula1<-lm(sellula1 ~ jrlula1 + desvlula1 + hialula1)
 summary(rlula1)
 
-## REGRESSÃO LULA2
+## REGRESSï¿½O LULA2
 
 rlula2<-lm(sellula2 ~ jrlula2 + desvlula2 + hialula2)
 summary(rlula2)
 
-## REGRESSÃO DILMA1
+## REGRESSï¿½O DILMA1
 
 rdilma1<-lm(seldilma1 ~ jrdilma1 + desvdilma1 + hiadilma1)
 summary(rdilma1)
 
-## REGRESSÃO DILMA2
+## REGRESSï¿½O DILMA2
 
 rdilma2<-lm(seldilma2 ~ jrdilma2 + desvdilma2 + hiadilma2)
 summary(rdilma2)
 
-## REGRESSÃO TEMER
+## REGRESSï¿½O TEMER
 
 rtemer<-lm(seltemer ~ jrtemer + desvtemer + hiatemer)
 summary(rtemer)
