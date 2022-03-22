@@ -16,7 +16,7 @@ install.packages("het.test")
 
 ##Set Arquivos
 
-dados<-read.table("GILVANDO015.txt", header = T );
+Dados<-read.table("GILVANDO015.txt", header = T );
 
 
 ##Transformar TS
